@@ -14,13 +14,13 @@ message JitEmpty {}
 message JitCmdv2 {
   uint32 cmd = 1; //reset;solve;expression
   int32 test_value = 2; //this the value output by Z3
-	repeated bytes expr_string = 3; //
-//	repeated JitRequest expr = 3; //
+//	repeated bytes expr_string = 3; //
+	repeated JitRequest expr = 3; //
 	string file_name = 4;
 	uint64 bhash = 5;
 	uint64 shash = 6;
 	bool direction = 7;
-	repeated JitRequest expr = 8;
+//	repeated JitRequest expr = 8;
 }
 
 message ResetCmd {
