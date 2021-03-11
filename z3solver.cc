@@ -480,7 +480,7 @@ z3::expr Z3Solver::serialize(const JitRequest* req,
 
 bool checkSat(Z3Solver &g_solver, std::shared_ptr<JitCmdv2> cmd) {
 	//deprecating reset and solve
-	assert(cmd->cmd()==2);
+	//assert(cmd->cmd()==2);
 	g_solver.reset();
 	for (int i = 0; i < cmd->expr_size(); i++) {
 		std::unordered_map<uint32_t,z3::expr> expr_cache;
@@ -500,7 +500,7 @@ bool checkSat(Z3Solver &g_solver, std::shared_ptr<JitCmdv2> cmd) {
 bool sendZ3Solver(bool opti, Z3Solver &g_solver, std::shared_ptr<JitCmdv2> cmd,
 									std::unordered_map<uint32_t,uint8_t> &solu, uint64_t *st) {
 	//deprecating reset and solve
-	assert(cmd->cmd()==2);
+	//assert(cmd->cmd()==2);
 	g_solver.reset();
 	//printExpression(&cmd->expr(0));
 	static int count = 0;
@@ -545,7 +545,7 @@ bool sendZ3Solver(bool opti, Z3Solver &g_solver, std::shared_ptr<JitCmdv2> cmd,
 
 void sendZ3Solver_with_solution(Z3Solver &g_solver, std::shared_ptr<JitCmdv2> cmd,
 		std::unordered_map<uint32_t,uint8_t> &solu) {
-	assert(cmd->cmd()==2);
+	//assert(cmd->cmd()==2);
 	if (solu.size() == 0) return;
 	//if (!checkSat(g_solver,cmd)) return;
 	static int count  =0;
